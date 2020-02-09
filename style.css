@@ -1,0 +1,96 @@
+body{
+    background: #212121;
+}
+.nav {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    background-color: #181818;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+.logo{
+    padding: 12px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+img{
+    width: 100%;
+}
+svg{
+    width: 100%;
+    height: 20px;
+}
+.mainIcon svg{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.socialIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+svg:hover path{
+    animation: shade 3s infinite;
+}
+svg:hover{
+    animation: fill 3s infinite;
+}
+@keyframes shade {
+    0%, 100%{stroke: #0CBEC6}
+    50%{stroke: #EA00D9}
+}
+@keyframes fill {
+    0%, 100%{fill: #0CBEC6}
+    50%{fill: #EA00D9}
+}
+@keyframes text{
+    0%, 100%{color: #0CBEC6;}
+    50%{color: #EA00D9;}
+}
+
+.icon{
+    display: flex;
+    flex-direction: row;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #181818;
+    width: 0px;
+    z-index: 1;
+    padding: 16px;
+    left: 60px;
+    transition: width 2s;
+}
+  
+.dropdown-content a {
+    font-family: 'Brandon Grotesque' ,Arial,sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.icon:hover .dropdown-content {
+    display: block;
+    width: auto;
+}
+.icon:hover .dropdown-content a {
+    animation: text 3s infinite;
+}
