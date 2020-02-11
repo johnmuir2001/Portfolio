@@ -1,5 +1,5 @@
 body{
-    background: #212121;
+    background: #262626;
 }
 .nav {
     height: 100%;
@@ -29,11 +29,11 @@ body{
 img{
     width: 100%;
 }
-svg{
+.iconSvg{
     width: 100%;
     height: 20px;
 }
-.mainIcon svg{
+.mainIcon .iconSvg{
     padding: 20px 0px;
     display: flex;
     flex-direction: column;
@@ -45,10 +45,10 @@ svg{
     justify-content: space-around;
     margin: 20px 0px;
 }
-svg:hover path{
+.iconSvg:hover path{
     animation: shade 3s infinite;
 }
-svg:hover{
+.iconSvg:hover{
     animation: fill 3s infinite;
 }
 @keyframes shade {
@@ -59,11 +59,6 @@ svg:hover{
     0%, 100%{fill: #0CBEC6}
     50%{fill: #EA00D9}
 }
-@keyframes text{
-    0%, 100%{color: #0CBEC6;}
-    50%{color: #EA00D9;}
-}
-
 .icon{
     display: flex;
     flex-direction: row;
@@ -71,26 +66,103 @@ svg:hover{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #181818;
-    width: 0px;
+    width: auto;
     z-index: 1;
-    padding: 16px;
-    left: 60px;
-    transition: width 2s;
+    padding: 0px 16px;
+    left: 0px;
 }
-  
 .dropdown-content a {
-    font-family: 'Brandon Grotesque' ,Arial,sans-serif;
-    letter-spacing: .14em;
+    position: absolute;
+    font-family: arial;
+    font-weight: 900;
+    font-size: 60px;
     text-transform: uppercase;
-    font-weight: 400;
-    font-size: 24px;
+    transform: rotate(90deg);
+    top: 0px;
+    width: 130px;
+    color: #181818;
 }
-
 .icon:hover .dropdown-content {
     display: block;
-    width: auto;
 }
 .icon:hover .dropdown-content a {
-    animation: text 3s infinite;
+    display: block;
 }
+.intro{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    left: 150px;
+}
+h1{
+    font-family: arial;
+    font-weight: 900;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: white;
+    z-index: 2;
+}
+h1:hover{
+    animation: glow 1s infinite linear;
+}
+@keyframes glow {
+    0%{text-shadow: 3px 3px #EA00D9, -3px -3px #0CBEC6;
+    transform: skewX(0deg)}
+    24%{text-shadow: 3px 1px #EA00D9, 2px -1px #0CBEC6;
+    transform: skewX(0deg)}
+    25%{text-shadow: 3px 1px #EA00D9, 2px -1px #0CBEC6;
+    transform: skewX(30deg)}
+    26%{text-shadow: 3px 1px #EA00D9, 2px -1px #0CBEC6;
+    transform: skewX(0deg)}
+    50%{text-shadow: 2px -1px #EA00D9, -1px 3px #0CBEC6;
+    transform: skewX(0deg)}
+    74%{text-shadow: -1px 2px #EA00D9, -2px -3px #0CBEC6;
+    transform: skewX(0deg)}
+    76%{text-shadow: -1px 2px #EA00D9, -3px -2px #0CBEC6;
+    transform: skewX(-30deg)}
+    78%{text-shadow: 1px 2px #EA00D9, -1px -2px #0CBEC6;
+    transform: skewX(0deg)}
+    100%{text-shadow: 2px 4px #EA00D9, -1px 3px #0CBEC6;
+    transform: skewX(0deg)}
+  }
+p{
+    font-family: arial;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #818181;
+    z-index: 2;
+}
+.jcontainer{
+    position: absolute;
+    left: 500px;
+}
+.j{
+    position: absolute;
+    height: 300px;
+    width: 130px;
+    background-color: black;
+    left: 270px;
+    z-index: -2;
+  }
+  .j::before{
+    position: relative;
+    content: '';
+    display: block;
+    width: 140px;
+    height: 70px;
+    border-bottom-left-radius: 400px;
+    border-bottom-right-radius:400px;
+    border: 130px solid black;
+    border-top: 0;
+    top: 300px;
+    left: -270px;
+  }
+  .path {
+    fill: none;
+    stroke: #0CBEC6;
+  }
+  .blur {
+    filter: url('#dropshadow');
+  }
