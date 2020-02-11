@@ -11,7 +11,7 @@ body{
     justify-content: space-between;
     top: 0;
     left: 0;
-    background-color: #181818;
+    background-color: #121212;
 }
 .nav a {
     text-decoration: none;
@@ -51,6 +51,18 @@ img{
 .iconSvg:hover{
     animation: fill 3s infinite;
 }
+.home path{
+    animation: shade 3s infinite;
+}
+.about path{
+    animation: shade 3s infinite;
+}
+.projects path{
+    animation: shade 3s infinite;
+}
+.contact path{
+    animation: shade 3s infinite;
+}
 @keyframes shade {
     0%, 100%{stroke: #0CBEC6}
     50%{stroke: #EA00D9}
@@ -80,7 +92,7 @@ img{
     transform: rotate(90deg);
     top: 0px;
     width: 130px;
-    color: #181818;
+    color: #121212;
 }
 .icon:hover .dropdown-content {
     display: block;
@@ -95,12 +107,13 @@ img{
     left: 150px;
 }
 h1{
+    position: relative;
     font-family: arial;
     font-weight: 900;
     font-size: 60px;
     text-transform: uppercase;
     color: white;
-    z-index: 2;
+    z-index: 20;
 }
 h1:hover{
     animation: glow 1s infinite linear;
@@ -124,7 +137,7 @@ h1:hover{
     transform: skewX(0deg)}
     100%{text-shadow: 2px 4px #EA00D9, -1px 3px #0CBEC6;
     transform: skewX(0deg)}
-  }
+}
 p{
     font-family: arial;
     font-weight: 500;
@@ -132,11 +145,12 @@ p{
     letter-spacing: 5px;
     text-transform: uppercase;
     color: #818181;
-    z-index: 2;
+    z-index: 20;
 }
 .jcontainer{
     position: absolute;
-    left: 500px;
+    left: 60%;
+    z-index: -3;
 }
 .j{
     position: absolute;
@@ -145,8 +159,8 @@ p{
     background-color: black;
     left: 270px;
     z-index: -2;
-  }
-  .j::before{
+}
+.j::before{
     position: relative;
     content: '';
     display: block;
@@ -158,11 +172,17 @@ p{
     border-top: 0;
     top: 300px;
     left: -270px;
-  }
-  .path {
+}
+.path {
+    position: absolute;
     fill: none;
-    stroke: #0CBEC6;
-  }
-  .blur {
-    filter: url('#dropshadow');
-  }
+    animation: neon 8s linear infinite;
+    z-index: -3;
+}
+.blur {
+    filter: url(#dropshadow);
+}
+@keyframes neon {
+    0%, 29%, 31%, 39%, 41%, 74%, 76%, 79%, 81%, 100%{stroke: #0CBEC6;}
+    30%, 40%, 75%, 80%{stroke: #818181;}
+}
