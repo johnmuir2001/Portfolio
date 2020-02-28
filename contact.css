@@ -2,7 +2,9 @@ body{
     background: #262626;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+}
+.hamburger {
+    display: none;
 }
 .nav {
     height: 100%;
@@ -22,9 +24,6 @@ body{
     font-size: 25px;
     color: #818181;
     display: block;
-}
-.hamburger {
-    display: none;
 }
 .logo{
     padding: 12px;
@@ -94,7 +93,6 @@ img{
 .dropdown-content a {
     position: absolute;
     font-family: arial;
-    display: none;
     font-weight: 900;
     font-size: 60px;
     text-transform: uppercase;
@@ -111,7 +109,6 @@ img{
 .icon:hover .dropdown-content a {
     display: block;
 }
-
 .intro{
     position: absolute;
     height: 100%;
@@ -139,7 +136,7 @@ img{
 }
 .info{
     position: relative;
-    top: 50%;
+    top: 70px;
     transform: translate(0%, -50%);
 }
 .title{
@@ -151,6 +148,7 @@ img{
     color: white;
     z-index: 20;
     left: 100px;
+    top: 30px;
 }
 .title::before{
     content: '<h1>';
@@ -169,7 +167,7 @@ img{
     color: #505050;
     font-family: "Source Code Pro";
     animation: none;
-    top: 135px;
+    top: 65px;
     left: -30px;
 }
 .title:hover{
@@ -195,57 +193,43 @@ img{
     100%{text-shadow: 2px 4px #EA00D9, -1px 3px #0CBEC6;
     transform: skewX(0deg)}
 }
-p{
-    position: relative;
-    font-family: arial;
-    font-weight: 500;
-    font-size: 10px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #818181;
-    z-index: 20;
+
+.contactList{
+    position: absolute;
+    width: 600px;
     left: 100px;
+    left: 10%;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
-.jcontainer{
-    position: absolute;
-    left: 55vw;
-    top: 20%;
-    z-index: -3;
+h1{
+    font-size: 20px;
+    margin: 5px;
+    color: white;
+    font-family: arial;
+    text-transform: uppercase;
 }
-.j{
-    position: absolute;
-    height: 300px;
-    width: 130px;
-    background-color: black;
-    left: 270px;
-    z-index: -2;
+.titleWord{
+    font-size: 35px;
+    margin: 50px 5px 20px 5px;
+    color: white;
+    font-family: arial;
+    text-transform: uppercase;
 }
-.j::before{
-    position: relative;
-    content: '';
-    display: block;
-    width: 140px;
-    height: 70px;
-    border-bottom-left-radius: 400px;
-    border-bottom-right-radius:400px;
-    border: 130px solid black;
-    border-top: 0;
-    top: 300px;
-    left: -270px;
+.link{
+    font-size: 15px;
+    float: right;
+    margin: 5px;
+    color: rgb(156, 156, 156);
+    font-family: arial;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.5s;
 }
-.path {
-    position: absolute;
-    fill: none;
-    animation: neon 6s linear infinite;
-    z-index: -3;
+.link:hover{
+    color: rgb(100, 100, 100);
 }
-.blur {
-    filter: url(#dropshadow);
-}
-@keyframes neon {
-    0%, 29%, 31%, 39%, 41%, 74%, 76%, 79%, 81%, 100%{stroke: #0CBEC6;}
-    30%, 40%, 75%, 80%{stroke: #818181;}
-}
+
 
 @media screen and (max-width: 1000px) {
     .hamburger {
@@ -360,11 +344,12 @@ p{
         position: relative;
         font-family: arial;
         font-weight: 900;
-        font-size: 50px;
+        font-size: 60px;
         text-transform: uppercase;
         color: white;
         z-index: 20;
         left: 100px;
+        top: 100px;
     }
     .title::before{
         content: '<h1>';
@@ -383,15 +368,8 @@ p{
         color: #505050;
         font-family: "Source Code Pro";
         animation: none;
-        top: 110px;
+        top: 70px;
         left: -30px;
-    }
-    .jcontainer{
-        position: absolute;
-        left: 50%;
-        top: 30%;
-        transform: scale(0.8);
-        z-index: -3;
     }
   }
 
@@ -527,18 +505,19 @@ p{
         color: #505050;
         font-family: "Source Code Pro";
         animation: none;
-        top: 175px;
+        top: 60px;
         left: -30px;
     }
-    .subTitle{
+    .contactList{
         position: absolute;
-        left: 50px;
+        left: 30px;
+        top: 60%;
+        width: 90%;
     }
-    .jcontainer{
-        position: absolute;
-        left: 10%;
-        top: 40%;
-        transform: scale(0.9);
-        z-index: -3;
+    h1{
+        font-size: 15px;
+    }
+    .link{
+        font-size: 11px;
     }
   }
