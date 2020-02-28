@@ -61,15 +61,6 @@ img{
 .home path{
     animation: shade 3s infinite;
 }
-.about path{
-    animation: shade 3s infinite;
-}
-.projects path{
-    animation: shade 3s infinite;
-}
-.contact path{
-    animation: shade 3s infinite;
-}
 @keyframes shade {
     0%, 100%{stroke: #0CBEC6}
     50%{stroke: #EA00D9}
