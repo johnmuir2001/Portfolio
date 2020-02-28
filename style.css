@@ -529,9 +529,9 @@ p{
     }
     .jcontainer{
         position: absolute;
-        left: 10%;
+        left: 0%;
         top: 40%;
-        transform: scale(0.9);
+        transform: scale(0.8);
         z-index: -3;
     }
   }
