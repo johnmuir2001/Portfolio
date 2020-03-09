@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:900&display=swap');
+
+body{
+    background: #262626;
+    padding: 0;
+    margin: 0;
+}
+.hamburger {
+  display: none;
+}
+.nav {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    background-color: #121212;
+    z-index: 1;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+.logo{
+    padding: 12px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+img{
+    width: 100%;
+}
+.iconSvg{
+    width: 100%;
+    height: 20px;
+}
+.mainIcon .iconSvg{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.socialIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px 0px;
+}
+.iconSvg:hover path{
+    animation: shade 3s infinite;
+}
+.iconSvg:hover{
+    animation: fill 3s infinite;
+}
+.home path{
+    animation: shade 3s infinite;
+}
+@keyframes shade {
+    0%, 100%{stroke: #0CBEC6}
+    50%{stroke: #EA00D9}
+}
+@keyframes fill {
+    0%, 100%{fill: #0CBEC6}
+    50%{fill: #EA00D9}
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+}
+.dropdown-content {
+    opacity: 0;
+    position: absolute;
+    width: auto;
+    z-index: -10;
+    padding: 0px 16px;
+    left: -20px;
+    transition: all 0.3s ease-in-out;
+}
+.dropdown-content a {
+    position: absolute;
+    font-family: arial;
+    font-weight: 900;
+    font-size: 60px;
+    display: none;
+    text-transform: uppercase;
+    transform: rotate(90deg);
+    top: 0px;
+    width: 130px;
+    color: #121212;
+}
+
+.icon:hover .dropdown-content {
+    opacity: 1;
+    left: 0px
+}
+.icon:hover .dropdown-content a {
+    display: block;
+}
+.intro{
+    position: absolute;
+    height: 100%;
+    left: 60px;
+}
+.intro::before{
+    content: '<body>';
+    position: absolute;
+    font-size: 16px;
+    font-weight: 900;
+    color: #505050;
+    font-family: "Source Code Pro";
+    top: 2%;
+    left: 10px;
+}
+.intro::after{
+    content: '</body>';
+    position: absolute;
+    font-size: 16px;
+    font-weight: 900;
+    color: #505050;
+    font-family: "Source Code Pro";
+    top: 95%;
+    left: 10px;
+}
+.info{
+    position: relative;
+    top: 27%;
+    transform: translate(0%, -50%);
+}
+.title{
+    position: relative;
+    font-family: arial;
+    font-weight: 900;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: white;
+    z-index: 20;
+    left: 100px;
+}
+.title::before{
+    content: '<h1>';
+    position: absolute;
+    font-size: 16px;
+    color: #505050;
+    font-family: "Source Code Pro";
+    animation: none;
+    top: -20px;
+    left: -30px;
+}
+.title::after{
+    content: '</h1>';
+    position: absolute;
+    font-size: 16px;
+    color: #505050;
+    font-family: "Source Code Pro";
+    animation: none;
+    top: 65px;
+    left: -30px;
+}
+.title:hover{
+    animation: glow 1s infinite linear;
+}
+@keyframes glow {
+    0%{text-shadow: 3px 3px #EA00D9, -3px -3px #0CBEC6;
+    transform: skewX(0deg)}
+    24%{text-shadow: 3px 1px #EA00D9, 2px -1px #0CBEC6;
+    transform: skewX(0deg)}
+    25%{text-shadow: 3px 1px #EA00D9, 2px -1px #0CBEC6;
+    transform: skewX(30deg)}
+    26%{text-shadow: 3px 1px #EA00D9, 2px -1px #0CBEC6;
+    transform: skewX(0deg)}
+    50%{text-shadow: 2px -1px #EA00D9, -1px 3px #0CBEC6;
+    transform: skewX(0deg)}
+    74%{text-shadow: -1px 2px #EA00D9, -2px -3px #0CBEC6;
+    transform: skewX(0deg)}
+    76%{text-shadow: -1px 2px #EA00D9, -3px -2px #0CBEC6;
+    transform: skewX(-30deg)}
+    78%{text-shadow: 1px 2px #EA00D9, -1px -2px #0CBEC6;
+    transform: skewX(0deg)}
+    100%{text-shadow: 2px 4px #EA00D9, -1px 3px #0CBEC6;
+    transform: skewX(0deg)}
+}
+  
+  h1{
+    color: white;
+    text-transform: uppercase;
+    margin: 10px;
+  }
+  p{
+      position: absolute;
+      font-family: arial;
+      font-size: 17px;
+      color: white;
+      width: 50vw;
+      top: 40%;
+      left: 110px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .hamburger {
+        display: none;
+    }
+    .nav {
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+        background-color: #121212;
+        z-index: 1;
+    }
+    .nav a {
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+    .logo{
+        padding: 12px;
+        background-color: #000000;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    img{
+        height: auto;
+        width: 20px;
+    }
+    .iconSvg{
+        width: 20px;
+        height: 100%;
+    }
+    .icon{
+        display: flex;
+        align-items: center;
+        padding: 0px 30px;
+    }
+    .mainIcon{
+        height: 100%;
+        padding: 0px 20px;
+        margin: 0px 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
+    .socialIcon {
+        display: none;
+    }
+    .dropdown-content {
+        opacity: 0;
+        position: relative;
+        width: auto;
+        z-index: -10;
+        margin: 0px 5px;
+        left: -100px;
+        top: 0px;
+        transition: all 0.3s ease-in-out;
+    }
+    .dropdown-content a {
+        position: absolute;
+        font-family: arial;
+        display: none;
+        font-weight: 900;
+        font-size: 60px;
+        text-transform: uppercase;
+        transform: rotate(0deg);
+        width: 130px;
+        left: -150px;
+        color: #121212;
+    }
+    
+    .icon:hover .dropdown-content {
+        opacity: 1;
+        top: 18px;
+    }
+    .icon:hover .dropdown-content a {
+        display: block;
+    }
+    .intro{
+        position: absolute;
+        height: 100%;
+        left: 10px;
+    }
+    .intro::before{
+        content: '<body>';
+        position: absolute;
+        font-size: 16px;
+        font-weight: 900;
+        color: #505050;
+        font-family: "Source Code Pro";
+        top: 80px;
+        left: 10px;
+    }
+    .intro::after{
+        content: '</body>';
+        position: absolute;
+        font-size: 16px;
+        font-weight: 900;
+        color: #505050;
+        font-family: "Source Code Pro";
+        top: 95%;
+        left: 10px;
+    }
+    .title{
+        position: relative;
+        font-family: arial;
+        font-weight: 900;
+        font-size: 60px;
+        text-transform: uppercase;
+        color: white;
+        z-index: 20;
+        left: 100px;
+        top: 60px;
+    }
+    .title::before{
+        content: '<h1>';
+        position: absolute;
+        font-size: 16px;
+        color: #505050;
+        font-family: "Source Code Pro";
+        animation: none;
+        top: -20px;
+        left: -30px;
+    }
+    .title::after{
+        content: '</h1>';
+        position: absolute;
+        font-size: 16px;
+        color: #505050;
+        font-family: "Source Code Pro";
+        animation: none;
+        top: 70px;
+        left: -30px;
+    }
+    p{
+        position: absolute;
+        font-family: arial;
+        font-size: 17px;
+        color: white;
+        width: 80vw;
+        top: 40%;
+        left: 110px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    .nav {
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+        background-color: #121212;
+        z-index: 1;
+    }
+    .nav a {
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+    .logo{
+        padding: 12px;
+        background-color: #000000;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    img{
+        height: auto;
+        width: 20px;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+      
+    .sidebar a {
+        padding: 18px 8px 18px 32px;
+        text-decoration: none;
+        font-size: 10vw;
+        font-family: arial;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+      
+    .sidebar a:hover {
+        color: #f1f1f1;
+    }
+      
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+      
+    .mainIcon{
+        display: none;
+    }
+    .socialIcon {
+        display: none;
+    }
+
+    .intro{
+        position: absolute;
+        height: 100%;
+        left: 10px;
+    }
+    .intro::before{
+        display: none;
+    }
+    .intro::after{
+        display: none;
+    }
+    .title{
+        position: relative;
+        font-family: arial;
+        font-weight: 900;
+        font-size: 50px;
+        text-transform: uppercase;
+        color: white;
+        z-index: 20;
+        left: 40px;
+        top: -50px;
+    }
+    .title::before{
+        content: '<h1>';
+        position: absolute;
+        font-size: 16px;
+        color: #505050;
+        font-family: "Source Code Pro";
+        animation: none;
+        top: -20px;
+        left: -30px;
+    }
+    .title::after{
+        content: '</h1>';
+        position: absolute;
+        font-size: 16px;
+        color: #505050;
+        font-family: "Source Code Pro";
+        animation: none;
+        top: 60px;
+        left: -30px;
+    }
+.text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  font-family: arial;
+  opacity: 1;
+  animation-iteration-count: 1;
+  animation: glitch 1s;
+}
+.img{
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.openbtn {
+  margin: 0px 20px;
+  left: 90%;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+p{
+    position: absolute;
+    font-family: arial;
+    font-size: 17px;
+    color: white;
+    width: 80vw;
+    top: 30%;
+    left: 50px;
+}
+  }
