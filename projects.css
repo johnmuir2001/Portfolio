@@ -290,6 +290,7 @@ img{
     color: white;
     letter-spacing: 4px;
     text-transform: uppercase;
+    text-align: center;
     margin: 10px 10px 20px 10px;
   }
   .click{
@@ -694,9 +695,10 @@ img{
     top: 250px;
 }
 .projectType{
-  color: white;
+  color: red;
   letter-spacing: 4px;
   text-transform: uppercase;
+  text-align: center;
   margin: 10px 10px 20px 10px;
 }
 .click{
